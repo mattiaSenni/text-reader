@@ -1,0 +1,446 @@
+@charset "utf-8";
+
+body{
+  font-family: 'Raleway', sans-serif;
+  transition: all 0.5s ease;
+  }
+
+  .navbar-nav .dropdown-menu a:hover{
+    background-color: lightblue;
+  }
+  .nav-item{
+    margin-left: 25px;
+    
+  }
+  .simbolo{
+    height: 2000px;
+    background-color: #232323;
+    text-align: center;
+    background-image: url("../img/text-reader-icon.png");
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: top;
+    padding-top: 300px;
+  }
+
+  textarea{
+    width: 100%;
+  }
+
+  .triangle-up {
+      width: 0;
+      height: 0;
+      border-left: 18px solid transparent;
+      border-right: 18px solid transparent;
+      border-bottom: 32px solid darkblue;
+  }
+  .triangle-up:hover{
+    border-bottom: 35px solid #047bff;
+  }
+
+  #backToTop{
+      display: none;
+      position: fixed;
+      bottom: 50px;
+      right: 15px;
+  }
+
+  #backToTop:hover{
+      opacity: 0.4;
+  }
+
+
+  #setting{
+    height: 90%;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    background-color: #33aeff;
+    color: white;
+    display: none;
+    padding: 10px;
+  }
+  
+
+  
+.blueShadow{
+  box-shadow: 0 .5rem 1rem #33aeff!important;
+}
+
+  .bottone{
+    width: 100%;
+    height: 40px;
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  .bottone:hover{
+    background-color: transparent;
+    color: #047bff;
+    border-color: #047bff;
+  }
+
+  .over-green:hover{
+    background-color: transparent;
+    color: green !important;
+    border-color: green !important;
+  }
+
+  .btn-space{
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
+
+  #letturaVeloce{
+    text-align: center;
+  }
+
+  .outline-danger:hover{background-color: transparent;color: #dc3545; border-color: #dc3545;}
+  /*.btn-success:hover{background-color: transparent;color: #28a745; border-color: #28a745;}*/
+
+  .titolo{font-size: 29px;font-weight: bold;text-align: center;}
+  .sottotitolo{font-size: 22px;font-weight: 300;}
+
+  #gestoreAudio{
+    display: none;
+    width: 65px;
+    height: 137px;
+    border: 2px solid white;
+    background-color: #007bff;
+    border-radius: 40px;
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    color: black;
+ }
+
+ .iconaPlay{
+    height: 45px;
+    width: 45px;
+    margin: 10px;
+    border-radius: 25px;
+    background-color: white;
+    display: inline-block;
+  }
+
+  .iconaPlay:hover{
+      background-color: #bbbbbb;
+  }
+
+  #iconaRiinizia{
+      margin-top: 10px;
+      margin-left: 10px;
+      width: 25px;
+      height: 25px;
+      background-color: black;
+  }
+
+  .pausa{
+      width: 5px;
+      height: 25px;
+      background-color: black;
+      margin-left: 13px;
+      margin-top: 8px;
+      float: left;
+  }
+
+  #iconaRiprendi{    
+      width: 0;
+      height: 0;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 30px solid black;
+      margin-top: 9px;
+      margin-left: 9px;    
+  }
+
+  #riprendi{
+      display: none;
+  }
+
+  #chooseSpid{
+    font-size: 15px;
+
+  }
+
+  .rounded-bottom {
+    border-bottom-right-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+  }
+  .round-setting{
+    border-radius:25px;
+  }
+
+  .rounded-top {
+    border-top-right-radius: 20px !important;
+    border-top-left-radius: 20px !important;
+  }
+
+  .chiudi-x{
+    border: none;
+    background-color: transparent;
+  }
+  .chiudi-x svg{
+    background-color: red;
+    color: white;
+    border: 2px solid red;
+    border-radius: 1.5em;
+  }
+  .chiudi-x svg:hover{
+    color: red;
+    background-color: white;
+  }
+
+  .setting-icon:hover{
+    transform: rotate(25deg);
+  }
+
+  @media (min-width: 0px) {
+    .fixed-top{
+      top: auto;
+      bottom : 0px;
+    
+    }
+    #setting{top: 0px; }
+    .big-navbar{
+      visibility: hidden;
+    }
+    .small-navbar{visibility: visible;}
+    .small-navbar .bi{width: 1.5em; height: 1.5em;}
+    .no-margin{width: 2em;}
+    .container{
+    margin-bottom: 70px;
+    margin-top: 0px;
+  }
+  .simbolo{background-size: 65%;}
+
+  .btn-mobile{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px !important;
+  }
+  }
+
+  @media (min-width: 576px) {
+    .small-navbar .bi{width: 3em; height: 3em;}
+    .no-margin{width: 4em;}
+    .btn-mobile{
+      width: 200px;
+      height: 200px;
+      border-radius: 100px !important;
+    }
+  }
+
+  @media (min-width: 768px) {
+    
+  }
+
+  @media (min-width: 992px) {
+    .btn-mobile{
+      width: 100%;
+      height: 40px;
+      border-radius: 2px;
+    }
+    #setting{top: 70px;}
+    .fixed-top{
+      top: 0px;
+      bottom : auto;
+    }
+    .container{
+      margin-bottom: 0px;
+      padding-top: 70px;
+      
+    }
+    .simbolo{background-size: 40%;}
+    /*CAMBIO BARRA DI NAVIGAZIONE DA MOBILE A PC (992)*/
+      .big-navbar{
+        visibility: visible;
+      }
+      .small-navbar{visibility: hidden;}
+  }
+
+
+  .nav a{color: white;text-align: center;}
+
+  /*mini navbar*/
+  .mini-nav-item a{
+    color: #007bff;
+
+  }
+
+  .no-margin{
+      margin-left: none;
+      margin: none;
+
+  }
+  
+/*classi generali*/
+
+.margin-bottom{margin-bottom: 20px;}
+.big-margin-bottom{margin-bottom: 80px;}
+.display-none{display: none;}
+.display{display: block;}
+.width-max{width: 100%;}
+
+.alert{
+  position: absolute;
+  top: 70px;
+  left: 20%;
+}
+
+.btn-special{
+  width: 140px; height: 45px;
+  font-size: 23px; cursor: pointer;
+  border: none; outline: none;
+  background: transparent;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.btn-special::before{
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 5px; height: 100%;
+  background-color: white;
+  z-index: -1; transition: all 0.5s;
+}
+.btn-special:hover::before{
+  width: 100%;
+}
+.btn-special:hover{color: black;}
+
+
+
+
+/*special succes*/
+
+.btn{
+  transition: all 0.5s ease;
+}
+
+.btn:hover{
+  transform: translateY(-7px);
+}
+
+.btn-special-primary{
+  width: 140px; height: 45px;
+  font-size: 23px; cursor: pointer;
+  border: none; outline: none;
+  background: transparent;
+  color: #007bff;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.btn-special-primary::before{
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 5px; height: 100%;
+  background-color: #007bff;
+  z-index: -1; transition: all 0.5s;
+}
+.btn-special-primary:hover::before{
+  width: 100%;
+}
+.btn-special-primary:hover{color: white;}
+
+/*NEW STYLE*/
+
+.new-navbar{
+  margin: 10px;
+  border-radius: 100% 0% 100% 0% / 100% 0% 100% 0% ;
+  transition: all 0.8s ease;
+}
+
+.small-navbar{
+  margin-bottom: 0px;
+}
+
+.navbar-color{
+  /* background-color: #0097cc; */
+  transition: all 0.5s ease;
+}
+.small-navbar-color{
+  background-color: #0097cc;
+  transition: all 0.5s ease;
+}
+
+
+.new-text-primary{
+  color: #0097cc;
+}
+
+.new-primary{
+  background-color: #0097cc;
+  color: white;
+}
+
+
+.new-btn{
+  border-radius: 80% 20% 54% 46% / 75% 35% 65% 25%;
+  transition: all 0.5s ease;
+}
+
+.btn-new-primary{
+  background-color: #0097cc;
+  color: white;
+  border-radius: 80% 20% 54% 46% / 75% 35% 65% 25%;
+}
+
+.btn-new-primary:hover{
+  background-color: #002358;
+  color: white;
+}
+
+#introduzione{
+  background-image: linear-gradient(top right, #FFFFFF 0%, #AACFEF 100%);
+}
+
+.navbar:hover{
+  background-color: #2222CC;
+  /* border-bottom: 2px solid white; */
+  box-shadow: 0px 10px 0px 0px #2222AA77;
+  transform: TRANSLATE(0PX, -10PX);
+}
+
+
+
+/**/
+.introduzione-sfondo{
+  content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #0097cc;
+    height: 500px;
+    width: 100%;
+    /* border-bottom-left-radius: 1500px; */
+    /* border-bottom-right-radius: 1500px; */
+    border-radius: 79% 21% 83% 17% / 35% 34% 66% 65%;
+}
+
+.border-wallpaper{
+  border-width: 5px;
+  border-style: solid;
+  border-color: white;
+}
+
+
+.color-white{
+  color: white !important;
+}
+
+#backToTop{
+  transition: all 0.2s ease-in;
+}
+
+#backToTop:hover{
+  transform: scale(1.2);
+}

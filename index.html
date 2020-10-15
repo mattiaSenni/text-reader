@@ -1,0 +1,460 @@
+﻿<!doctype html>
+<html lang="it">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Piedra&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Indie+Flower&family=Josefin+Sans:wght@300&family=Montaga&family=Montserrat:wght@300&family=PT+Sans+Narrow&family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Monoton&family=Pacifico&family=Parisienne&family=Press+Start+2P&family=Ranchers&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="img/text-reader-icon.png" rel="icon">
+    <title>text-reader</title>
+  </head>
+  <body >
+    <div class="simbolo" id="simbolo">
+      <div class="spinner-grow text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
+
+    <!--navabar a schermo grande--><!--rounded-bottom, -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top  big-navbar navbar-color new-navbar" id="nav-grande">
+      <a id="icon" class="navbar-brand color-white color" href="index.html" style="margin-right: 100px;font-family: 'Chelsea Market', cursive;">Text reader </a>
+      <button id="toggle-menu" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#" onclick="ApriTesto()">modifica testo<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#" onclick="ApriIntroduzione()"></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#" onclick="ApriLettraVeloce(false)"> <svg class="bi bi-house-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+              <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+            </svg> home lettura</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#" onclick="ApriLettraVeloce(true)"> <svg class="bi bi-book" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M3.214 1.072C4.813.752 6.916.71 8.354 2.146A.5.5 0 0 1 8.5 2.5v11a.5.5 0 0 1-.854.354c-.843-.844-2.115-1.059-3.47-.92-1.344.14-2.66.617-3.452 1.013A.5.5 0 0 1 0 13.5v-11a.5.5 0 0 1 .276-.447L.5 2.5l-.224-.447.002-.001.004-.002.013-.006a5.017 5.017 0 0 1 .22-.103 12.958 12.958 0 0 1 2.7-.869zM1 2.82v9.908c.846-.343 1.944-.672 3.074-.788 1.143-.118 2.387-.023 3.426.56V2.718c-1.063-.929-2.631-.956-4.09-.664A11.958 11.958 0 0 0 1 2.82z"/>
+              <path fill-rule="evenodd" d="M12.786 1.072C11.188.752 9.084.71 7.646 2.146A.5.5 0 0 0 7.5 2.5v11a.5.5 0 0 0 .854.354c.843-.844 2.115-1.059 3.47-.92 1.344.14 2.66.617 3.452 1.013A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.276-.447L15.5 2.5l.224-.447-.002-.001-.004-.002-.013-.006-.047-.023a12.582 12.582 0 0 0-.799-.34 12.96 12.96 0 0 0-2.073-.609zM15 2.82v9.908c-.846-.343-1.944-.672-3.074-.788-1.143-.118-2.387-.023-3.426.56V2.718c1.063-.929 2.631-.956 4.09-.664A11.956 11.956 0 0 1 15 2.82z"/>
+            </svg> lettura veloce
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="OpenSetting()"> <svg class="bi bi-gear-fill setting-icon" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 0 0-5.86 2.929 2.929 0 0 0 0 5.858z"/>
+            </svg>impostazioni testo<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              altro
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#" onclick="ShowCronologia()"> <svg class="bi bi-collection-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <rect width="16" height="10" rx="1.5" transform="matrix(1 0 0 -1 0 14.5)"/>
+                <path fill-rule="evenodd" d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1z"/>
+              </svg> cronologia
+              </a>
+              <a class="dropdown-item" href="#" onclick="ApriIntroduzione()"> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-tools" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M0 1l1-1 3.081 2.2a1 1 0 0 1 .419.815v.07a1 1 0 0 0 .293.708L10.5 9.5l.914-.305a1 1 0 0 1 1.023.242l3.356 3.356a1 1 0 0 1 0 1.414l-1.586 1.586a1 1 0 0 1-1.414 0l-3.356-3.356a1 1 0 0 1-.242-1.023L9.5 10.5 3.793 4.793a1 1 0 0 0-.707-.293h-.071a1 1 0 0 1-.814-.419L0 1zm11.354 9.646a.5.5 0 0 0-.708.708l3 3a.5.5 0 0 0 .708-.708l-3-3z"/>
+                <path fill-rule="evenodd" d="M15.898 2.223a3.003 3.003 0 0 1-3.679 3.674L5.878 12.15a3 3 0 1 1-2.027-2.027l6.252-6.341A3 3 0 0 1 13.778.1l-2.142 2.142L12 4l1.757.364 2.141-2.141zm-13.37 9.019L3.001 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/>
+              </svg> introduzione</a>
+              <a class="dropdown-item" href="#" onclick="Leggi()"> <svg class="bi bi-play-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+              </svg> leggi testo</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#" onclick="MakeHome('#343434', 'white')"> <svg class="bi bi-brightness-high-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="8" cy="8" r="4"/>
+                <path fill-rule="evenodd" d="M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+              </svg>  black mode</a>
+              <a class="dropdown-item" href="#" onclick="MakeHome('white', 'black')">  <svg class="bi bi-brightness-high" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+              </svg>  normal mode</a>
+              <a class="dropdown-item" href="#" onclick="MakeHome('#f0d592', 'black')"> <svg class="bi bi-brightness-alt-low" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.5 5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5 6a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-8.486 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
+                <path fill-rule="evenodd" d="M5.041 10.5h5.918a3 3 0 0 0-5.918 0zM4 11a4 4 0 1 1 8 0 .5.5 0 0 1-.5.5h-7A.5.5 0 0 1 4 11z"/>
+              </svg>  read mode</a>
+              
+            </div>
+          </li>
+          
+                    
+        </ul>
+        
+      </div>
+    </nav>
+
+    <!--
+      navbar-small    
+    -->
+
+    
+
+    <nav class="fixed-bottom small-navbar small-navbar-color new-navbar color" id="nav-small">
+      <ul class="nav">
+        <li class="nav-item no-margin" >
+          <a class="nav-link" href="#" onclick="ApriTesto()"><svg class="bi bi-pencil-square"  viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+          </svg><span class="sr-only">(current)</span></a>
+        </li>
+        <!--home lettura-->
+        <li class="nav-item no-margin" >
+          <a class="nav-link" href="#" onclick="ApriLettraVeloce(false)"> <svg class="bi bi-house-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+            <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+          </svg> </a>
+        </li>
+        <!--lettura veloce-->
+        <li class="nav-item no-margin" >
+          <a class="nav-link" href="#" onclick="ApriLettraVeloce(true)"> <svg class="bi bi-book" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M3.214 1.072C4.813.752 6.916.71 8.354 2.146A.5.5 0 0 1 8.5 2.5v11a.5.5 0 0 1-.854.354c-.843-.844-2.115-1.059-3.47-.92-1.344.14-2.66.617-3.452 1.013A.5.5 0 0 1 0 13.5v-11a.5.5 0 0 1 .276-.447L.5 2.5l-.224-.447.002-.001.004-.002.013-.006a5.017 5.017 0 0 1 .22-.103 12.958 12.958 0 0 1 2.7-.869zM1 2.82v9.908c.846-.343 1.944-.672 3.074-.788 1.143-.118 2.387-.023 3.426.56V2.718c-1.063-.929-2.631-.956-4.09-.664A11.958 11.958 0 0 0 1 2.82z"/>
+            <path fill-rule="evenodd" d="M12.786 1.072C11.188.752 9.084.71 7.646 2.146A.5.5 0 0 0 7.5 2.5v11a.5.5 0 0 0 .854.354c.843-.844 2.115-1.059 3.47-.92 1.344.14 2.66.617 3.452 1.013A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.276-.447L15.5 2.5l.224-.447-.002-.001-.004-.002-.013-.006-.047-.023a12.582 12.582 0 0 0-.799-.34 12.96 12.96 0 0 0-2.073-.609zM15 2.82v9.908c-.846-.343-1.944-.672-3.074-.788-1.143-.118-2.387-.023-3.426.56V2.718c1.063-.929 2.631-.956 4.09-.664A11.956 11.956 0 0 1 15 2.82z"/>
+          </svg> </a>
+        </li>
+        <!--impostazioni testo-->
+        <li class="nav-item no-margin">
+          <a class="nav-link" href="#" onclick="OpenSetting()"><svg class="bi bi-gear-fill setting-icon"  viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 0 0-5.86 2.929 2.929 0 0 0 0 5.858z"/>
+          </svg></a>
+        </li>
+        <!--altro-->
+        <li class="nav-item no-margin">
+          <div class="btn-group dropup">
+            <a class=" nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-list-nested" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item mini-nav-item" style="color: #047bff;" href="#" onclick="ShowCronologia()"> <svg class="bi bi-collection-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <rect width="16" height="10" rx="1.5" transform="matrix(1 0 0 -1 0 14.5)"/>
+                <path fill-rule="evenodd" d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1z"/>
+              </svg> cronologia</a>
+              <a class="dropdown-item mini-nav-item" style="color: #047bff;" href="#" onclick="ApriIntroduzione()"> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-tools" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M0 1l1-1 3.081 2.2a1 1 0 0 1 .419.815v.07a1 1 0 0 0 .293.708L10.5 9.5l.914-.305a1 1 0 0 1 1.023.242l3.356 3.356a1 1 0 0 1 0 1.414l-1.586 1.586a1 1 0 0 1-1.414 0l-3.356-3.356a1 1 0 0 1-.242-1.023L9.5 10.5 3.793 4.793a1 1 0 0 0-.707-.293h-.071a1 1 0 0 1-.814-.419L0 1zm11.354 9.646a.5.5 0 0 0-.708.708l3 3a.5.5 0 0 0 .708-.708l-3-3z"/>
+                <path fill-rule="evenodd" d="M15.898 2.223a3.003 3.003 0 0 1-3.679 3.674L5.878 12.15a3 3 0 1 1-2.027-2.027l6.252-6.341A3 3 0 0 1 13.778.1l-2.142 2.142L12 4l1.757.364 2.141-2.141zm-13.37 9.019L3.001 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/>
+              </svg> introduzione</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item mini-nav-item" style="color: #047bff;" href="#" onclick="Leggi()"> <svg class="bi bi-caret-right-fill"  viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="playIcon">
+                <path  d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+              </svg>leggi testo</a>
+              <a class="dropdown-item mini-nav-item" style="color: #047bff;" href="#" onclick="MakeHome('#343434', '#ffffff')"> <svg class="bi bi-brightness-high-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="8" cy="8" r="4"/>
+                <path fill-rule="evenodd" d="M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+              </svg>  black mode</a>
+              <a class="dropdown-item mini-nav-item" style="color: #047bff;" href="#" onclick="MakeHome('#ffffff', '#000000')"> <svg class="bi bi-brightness-high" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+              </svg>  normal mode</a>
+              <a class="dropdown-item mini-nav-item" style="color: #047bff;" href="#" onclick="MakeHome('#f0d592', '#000000')"> <svg class="bi bi-brightness-alt-low" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.5 5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5 6a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-8.486 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
+                <path fill-rule="evenodd" d="M5.041 10.5h5.918a3 3 0 0 0-5.918 0zM4 11a4 4 0 1 1 8 0 .5.5 0 0 1-.5.5h-7A.5.5 0 0 1 4 11z"/>
+              </svg>  read mode</a>
+              
+            </div>
+          </div>
+        </li>
+        
+        
+      </ul>
+    </nav>
+
+
+    
+    
+        <!--INIZIO PAGINA HTML-->
+    <div class="container" id="container">
+      <div id="home">
+        <h1 style="text-align: center;">home</h1>
+        
+        <div class="row btn-space">
+          <div class="col-md-1"></div>
+          <div class="col-md-4"><button onclick="Leggi()" id="riproduci" class="new-btn btn btn-primary bottone new-btn">leggi il testo</button></div>
+          <div class="col-md-2"></div>
+          <div class="col-md-4"><button id="btnShowVelocita" class="new-btn btn btn-primary bottone new-btn" onclick="OpenSetting()">impostazioni</button></div>
+          <div class="col-md-1"></div>
+
+          <div class="col-md-4"></div>
+        </div>
+        <label id="testo"></label>
+      </div>
+      
+      <div id="introduzione" style="font-size: 25px;">
+        <div id="introduzione-sfondo"></div>
+        <h1 style="position: sticky;"class="text-center">introduzione</h1>
+        <h1 style="position: sticky;">TEXT READER</h1>
+        <section class="row">
+          <div class="col-md-8">
+            <p>fatti leggere i testi da text-reader, risparmierai tempo e fatica, prova inoltre ad attivare tutte le nostre impostazioni per farti leggere meglio un testo cliccando sul pulsante "impostazioni testo", situato nella barra di navigazione, buona lettura</p>
+            <div class="row">
+              <button class="col-md-5 btn btn-new-primary margin-bottom border-wallpaper" id="botton-intro" onclick="ApriTesto()">inizia a scrivere</button>
+              
+            </div>
+          </div>
+          <div class="col-md-4">
+            <img src="img/text-reader-icon.png" style="width: 100%;" alt="simbolo text-reader" >
+          </div>
+          
+        </section>
+        <hr>
+        <section class="big-margin-bottom">
+          <h2>breve guida per iniziare</h2>
+          <p><strong>la barra di navigazione</strong><br>
+            la barra di navigazione dispone di 5 menu:(in ordine)<br>
+            <ul>
+              <li>modifica testo: serve per iniziare, per scrivere il testo che poi si vuole far leggere al sito o che si vuole leggere com maggior facilità</li>
+              <li>home lettura: è la pagina principale che offre la migliore esperienza di lettura</li>
+              <li>lettura veloce: è una modalità di lettura non molto comune ma che può essere molto utile, consente di leggere un testo senza spostare gli occhi, facendo apparire una parola alla volta sul display, e con la possibilità di modificare la velocità di scorrimento delle parole</li>
+              <li>impostazione testo: tutte le impostazioni/regole di formattazione che si possono applicare a questo sito <a href="#imp">guida impostazioni</a></li>
+              <li>altro: altre funzioni che offre il sito:
+                <ul>
+                  <li>cronologia: è la cronologia di tutti i testi scritti da te in questa pagina, che varrà cancellata non appena si chiude il sito</li>
+                  <li>introduzione: è questa guida qui</li>
+                  <li>leggi testo: una volta scritto il testo, spingendo questo bottone si potrà far leggere il testo dal computer</li>
+                  <li>black mode - per gli amanti del tema scura o per i lettori notturni</li>
+                  <li>normal mode - tema classico con sfondo bianco</li>
+                  <li>read mode - un tema pensato apposta per la lettura, con uno sfondo giallino che ricorda la carta e non affatica troppo gli occhi</li>
+                </ul>
+              </li>
+              
+              
+              
+            </ul>
+          </p>
+        </section>
+        <hr>
+
+        <section class="big-margin-bottom" id="colorMode">
+          <h2>leggi senza affaticare gli occhi</h2>
+          <p>text-reader predispone di 3 modalità predefinite di letture: 
+            <ul>
+              <li>black mode - per gli amanti del tema scura o per i lettori notturni</li>
+              <li>normal mode - tema classico con sfondo bianco</li>
+              <li>read mode - un tema pensato apposta per la lettura, con uno sfondo giallino che ricorda la carta e non affatica troppo gli occhi</li>                  
+            </ul>
+          </p>
+        </section>
+        <hr>
+        <section class="big-margin-bottom">
+          <h2>esplora la modalità lettura veloce</h2>
+          <p>cliccando sulla scritta "lettura veloce" o "<svg class="bi bi-book" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M3.214 1.072C4.813.752 6.916.71 8.354 2.146A.5.5 0 0 1 8.5 2.5v11a.5.5 0 0 1-.854.354c-.843-.844-2.115-1.059-3.47-.92-1.344.14-2.66.617-3.452 1.013A.5.5 0 0 1 0 13.5v-11a.5.5 0 0 1 .276-.447L.5 2.5l-.224-.447.002-.001.004-.002.013-.006a5.017 5.017 0 0 1 .22-.103 12.958 12.958 0 0 1 2.7-.869zM1 2.82v9.908c.846-.343 1.944-.672 3.074-.788 1.143-.118 2.387-.023 3.426.56V2.718c-1.063-.929-2.631-.956-4.09-.664A11.958 11.958 0 0 0 1 2.82z"/>
+            <path fill-rule="evenodd" d="M12.786 1.072C11.188.752 9.084.71 7.646 2.146A.5.5 0 0 0 7.5 2.5v11a.5.5 0 0 0 .854.354c.843-.844 2.115-1.059 3.47-.92 1.344.14 2.66.617 3.452 1.013A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.276-.447L15.5 2.5l.224-.447-.002-.001-.004-.002-.013-.006-.047-.023a12.582 12.582 0 0 0-.799-.34 12.96 12.96 0 0 0-2.073-.609zM15 2.82v9.908c-.846-.343-1.944-.672-3.074-.788-1.143-.118-2.387-.023-3.426.56V2.718c1.063-.929 2.631-.956 4.09-.664A11.956 11.956 0 0 1 15 2.82z"/>
+          </svg>" nella barra di navigazione, potrai leggere il tuo testo senza spostare gli occhi perchè le scritte appariranno e scompariranno tutto nello stesso punto, potrà essere inoltre modificata la velocità di scorrimento delle parole</p>
+        </section>
+
+        <section class="big-margin-bottom" id="imp">
+          <h2>divertiti a modificare i caratteri col menu impostazioni</h2>
+          <p><button class="btn btn-secondary" onclick="OpenSetting()">apri le impostazioni</button><br>
+            con questo bottone puoi aprire le impostazioni che possono essere aperte anche dalla barra di navigazione, divertiti a cambiare le impostazione per avere la miglior lettura possibile, vediamo le sezioni:
+            <ul>
+              <li>modifica velocità di lettura: puoi modificare la velocità col quale il sito legge il testo, può essere normale(dafault), lento o veloce</li>
+              <li>scegli la grandezza del carattere: da qui potrai scegliere la grandezza del carattere spostando la barra della grandezza che si trova sulla sinistra</li>
+              <li>scegli l'orientamento del testo, spingendo uno dei quattro bottoni(sinistra, centrato, destra, giustificato) potrai cambiare l'allineamento del testo come, ad esempio, su world</li>
+              <li>scegli il carattere: cliccando sul menu a tendiana potrai scegliere uno tra i 7 caratteri deisponibili, uno più bello dell'altro</li>
+              <li>scegli lo sfondo / scegli il colore del font: attraverso questi due tasti potrai, spingendo il bottone "salva", cambiare il colore di sfondo e quello del font della pagine, ma ATTENZIONE, cliccando salva cambierai entrambi, non solo uno dei due</li>
+            </ul>
+          </p>
+        </section>
+
+        <section class="big-margin-bottom">
+          <h2>scorciatoie da tastiera  <span class="badge badge-pill badge-primary">New</span></h2>
+          <p>per disattivare le scorciatoie da tastiera vai nelle impostazioni</p>
+          <p>            
+            <ul>
+              <li>L = leggi il testo</li>
+              <li>I = apri/chiudi impostazioni</li>
+              <li>M = modifica/scrivi il testo</li>
+              <li>H = vai alla home lettura</li>
+              <li>V = vai alla lettura veloce</li>
+              <li>C = vai alla cronologia</li>
+            </ul>
+            funzionano solo nella modalità lettura veloce
+            <ul>
+              <li>P = parte lettura in modalità veloce</li>
+              <li>S = ferma la lettura in modalità veloce</li>
+            </ul>
+          </p>
+        </section>
+        
+      </div>
+
+      <div class="alert alert-success display-none" role="alert" id="alert-testo" >
+        testo aggiunto con successo
+      </div>
+        <div id="scrivi">
+          
+          <h1 class="text-center"><svg class="bi bi-chat-dots-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+          </svg>modifica testo</h1>
+          <textarea id="scriviTesto" rows="7" placeholder="scrivi qui il testo" class="form-control"></textarea><br>
+          <button id="btnIinvia" class="new-btn btn btn-outline-success btn-lg btn-block" style="margin-bottom: 40px;" onclick="ChiudiTesto()">invio <svg class="bi bi-caret-right-square-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4v8z"/>
+          </svg></button>
+          <p>se vuoi parlare invece di scrivere collegati a <a href="https://www.google.com/intl/it/chrome/demos/speech.html" target="_blank">questo sito di google</a> che ti permette di scrivere quello che dici, poi copia incolla il testo qui sopra</p>
+
+          <p class="titolo" id="regole-generali">guida per scrivere un testo più ordinato <strong>*importante*</strong></p>
+          <p class="sottotitolo">se segui queste regole il sito funzionarà perfettamente</p>
+          <ul>
+              <li>
+                  <p class="sottotitolo">come andare a capo?</p>
+                  <p>
+                      per andare a capo bisogna mettere un '.'(punto), e il programma andrà a capo da solo, è sconsigliato mettere i "..."(tre punti), in quanto il programma li leggerà male, è <strong>importante mettere il punto per andare a capo, perchè se si preme "invio" nella pagina della visualizzazione del testo non si andrà a capo</strong>
+                  </p>
+              </li>
+              <li>
+                  <p class="sottotitolo">come mettere una linea per ordinare il testo</p>
+                  <p>per creare una linea orizzontale che divide il testo per ordinarlo bisognerà inserire i caratteri "--" (2 trattini di fila), il programma andrà in automatico a capo e inserirà una linea orizzontale che ordinerà il tutto</p>
+              </li>
+              <li>
+                  <p class="sottotitolo">cosa succede se metto il ! o il ?</p>
+                  <p>se vengono inseriti i caratteri '!' e/o '?' il programma li leggerà come lettere normali e perciò non andrà a capo, per farlo andare a capo è necessario inserire un '.'(punto) dopo il '?' o dopo il '!'</p>
+              </li>
+              <li>
+                  <p class="sottotitolo">per una migliore "modalità lettura veloce"</p>
+                  <p>inserire lo spazio anche dopo il ".", perchè le parole vengono separate ogni volta che c'è il carattere " "(spazio)</p>
+              </li>
+          </ul>
+          <p>questo sito supporta tutti i tag html che si possono contenere in un tag "p"</p>
+        </div>
+      
+
+      <div id="letturaVeloce">
+        <h1>lettura veloce</h1>            
+          
+          <div class="row btn-space">
+            <div class="col-1"></div>
+            <div class="col-4"><button onclick="PlayLetturaVeloce()" class="btn btn-success bottone btn-mobile over-green new-btn">parti</button></div>
+            <div class="col-2"></div>
+            <div class="col-4"><button id="stop" onclick="StopLetturaVeloce()" class="btn btn-danger bottone outline-danger btn-mobile new-btn">stop</button></div>
+            <div class="col-1"></div>
+  
+            <div class="col-md-4"></div>
+          </div>
+          <p id="lVeloce"></p>
+          <div id="chooseSpid" class="shadow p-3">
+              scegli la velocità di scorrimento delle parole:   <input type="number" id="lblSpeed" value="500"> millisecondi
+              <button id="btnSpeed" onclick="CambiaVelocita()" class="btn btn-outline-secondary">cambia</button>
+              <div class="alert alert-success display-none" role="alert" id="alert-cambio-velocita" >
+                velocità cambiata con successo
+              </div>
+              <div class="alert alert-danger display-none" role="alert" id="alert-cambio-velocita-danger" >
+                velocità cambiata con successo
+              </div>
+          </div>
+      </div>     
+      
+      <div id="cronologia">
+          <p class="titolo">Cronologia</p>
+          <p id="raccolta"></p>
+      </div>
+
+
+      <div id="setting" class="col-sm-12 col-md-6 overflow-auto blueShadow p-3 round-setting">
+        <button onclick="OpenSetting()" class="chiudi-x float-right" id="chiudi"><svg class="bi bi-x-circle-fill" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.146-3.146a.5.5 0 0 0-.708-.708L8 7.293 4.854 4.146a.5.5 0 1 0-.708.708L7.293 8l-3.147 3.146a.5.5 0 0 0 .708.708L8 8.707l3.146 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.146z"/>
+        </svg></button>
+        <div id="modVelocita">
+            <h1>modifica velocità di lettura</h1>
+            <select onchange="ChangeVelocitaLettura(value)" class="btn btn-secondary">
+                <option value="1">normale</option>
+                <option value="0.5">lento</option>
+                <option value="2">veloce</option>
+            </select>
+        </div>
+          <hr>
+          <h1>scegli la grandezza del carattere</h1>
+          <div class="row">
+            <div class="col-9">
+              <input type="range" onchange="ChangeSize(value)" id="chooseSize" value="15">
+            </div>
+            <p class="col-3" id="lblCarattere">15 px</p>
+          </div>
+          <h1>scegli l'orientamento del testo</h1>
+          <div id="orientamento">
+              <button onclick="Orientamento('left')" class="btn btn-secondary">sinistra</button>
+              <button onclick="Orientamento('center')" class="btn btn-secondary">centrato</button>
+              <button onclick="Orientamento('right')" class="btn btn-secondary">destra</button>
+              <button onclick="Orientamento('justify')" class="btn btn-secondary">giustificato</button>
+          </div>   
+          <h1>scegli il carattere</h1>     
+          <select onchange="ChangeFont(value)" class="btn btn-secondary">
+            <option value="'Raleway', sans-serif" style="font-family: 'Raleway', sans-serif;">Raleway</option>
+            <option value="'Chelsea Market', cursive" style="font-family: 'Chelsea Market', cursive;">Chelsea Market</option>
+            <option value="'Piedra', cursive" style="font-family: 'Piedra', cursive;">Piedra</option>
+            <option value="'Montserrat', sans-serif" style="font-family: 'Montserrat', sans-serif;">Montserrat</option>
+            <option value="'Indie Flower', cursive" style="font-family: 'Indie Flower', cursive;">Indie Flower</option>
+            <option value="'Josefin Sans', sans-serif" style="font-family: 'Josefin Sans', sans-serif;">Josefin Sans</option>    
+            <option value="'Montaga', serif" style="font-family: 'Montaga', serif;">Montaga</option>
+            <option value="'PT Sans Narrow', sans-serif" style="font-family: 'PT Sans Narrow', sans-serif;">PT Sans Narrow</option>            
+            <option value="'Great Vibes', cursive" style="font-family: 'Great Vibes', cursive;">Great Vibes</option>
+            <option value="'Monoton', cursive" style="font-family: 'Monoton', cursive;">Monoton</option>
+            <option value="'Pacifico', cursive" style="font-family: 'Pacifico', cursive;">Pacifico</option>
+            <option value="'Parisienne', cursive" style="font-family: 'Parisienne', cursive;">Parisienne</option>
+            <option value="'Press Start 2P', cursive" style="font-family: 'Press Start 2P', cursive;">Press Start 2P</option>
+            <option value="'Ranchers', cursive" style="font-family: 'Ranchers', cursive;">Ranchers</option>
+            <option value="'Shadows Into Light'" style="font-family: 'Shadows Into Light', cursive;">Shadows Into Light</option>
+          </select>
+          <hr>
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="customSwitch1" onchange="CambiaAttivazioneScorciatoie()" checked="true">
+            <label class="custom-control-label" for="customSwitch1" id="attivaScorciatoie">scorciatoie da tastiera attivate</label>
+          </div>
+          <hr>
+          <h1>scegli lo sfondo</h1>
+          <input type="color" id="chooseBack" value="#000000">
+          <h1>scegli il colore del font</h1>
+          <input type="color" id="chooseFont" value="#232323">
+          <br><br><button onclick="InvioSetting()" class="btn btn-success">salva</button>
+      </div>
+    </div>
+    
+
+    <div id="gestoreAudio" class="shadow-lg">
+      <div class="iconaPlay" id="riinizia" onclick="Riinizia()">
+        <svg class="bi bi-stop-fill" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5z"/>
+        </svg>
+      </div>
+      <div class="iconaPlay" id="pausa" onclick="Pausa()">
+        <svg class="bi bi-pause-fill" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z"/>
+        </svg>
+      </div>
+      <div class="iconaPlay" id="riprendi" onclick="Riprendi()">
+        <svg class="bi bi-play-fill" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+        </svg>
+      </div>
+    </div>
+
+    <a id="backToTop" href="#container" title="torna su" class="new-text-primary">
+      <svg class="bi bi-arrow-up-circle-fill" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-10.646.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+      </svg>
+    </a>
+    
+
+    
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <script src="js/scroll_to.js"></script>
+  </body>
+</html>
