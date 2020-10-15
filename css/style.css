@@ -41,7 +41,7 @@ body{
   #backToTop{
       display: none;
       position: fixed;
-      bottom: 50px;
+      bottom: 70px;
       right: 15px;
   }
 
@@ -355,12 +355,14 @@ body{
 
 .new-navbar{
   margin: 10px;
-  border-radius: 100% 0% 100% 0% / 100% 0% 100% 0% ;
+  border-radius: 88% 12% 91% 9% / 45% 43% 57% 55%  ;
   transition: all 0.8s ease;
+  background-color: #0097cc;
 }
 
 .small-navbar{
   margin-bottom: 0px;
+
 }
 
 .navbar-color{
@@ -368,7 +370,7 @@ body{
   transition: all 0.5s ease;
 }
 .small-navbar-color{
-  background-color: #0097cc;
+  
   transition: all 0.5s ease;
 }
 
@@ -438,9 +440,20 @@ body{
 }
 
 #backToTop{
+  background-color: #0097cc;
+  border-radius: 49% 51% 46% 54% / 36% 24% 76% 64% ;
   transition: all 0.2s ease-in;
 }
 
 #backToTop:hover{
   transform: scale(1.2);
+}
+
+.nav-link{
+  color: white;
+}
+
+.div-center{
+  margin-left: auto;
+  margin-right: auto;
 }

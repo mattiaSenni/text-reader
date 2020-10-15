@@ -260,6 +260,7 @@ function MakeHome(back, write){
     document.getElementById("chooseBack").value= back;
     document.getElementById("chooseFont").value = write;
     document.getElementById("botton-intro").style.borderColor=back;
+    document.getElementsByClassName("nav-link").color = write;
 }
 
 function Orientamento(type){
