@@ -34,10 +34,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#" onclick="ApriTesto()">modifica testo<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#" onclick="ApriIntroduzione()"></a>
+            <a class="nav-link" href="#" onclick="ApriTesto()"><svg class="bi bi-pencil-square" height="1em" width="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+              <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+            </svg>modifica testo<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="#" onclick="ApriLettraVeloce(false)"> <svg class="bi bi-house-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -200,7 +200,7 @@
             <p>fatti leggere i testi da text-reader, risparmierai tempo e fatica, prova inoltre ad attivare tutte le nostre impostazioni per farti leggere meglio un testo cliccando sul pulsante "impostazioni testo", situato nella barra di navigazione, buona lettura</p>
             <div class="row">
               <button class="col-md-5 btn btn-new-primary margin-bottom border-wallpaper" id="botton-intro" onclick="ApriTesto()">inizia a scrivere</button>
-              
+              <button class="col-md-5 btn btn-secondary new-btn margin-bottom" onclick="ApriFile()">carica un file</button>
             </div>
           </div>
           <div class="col-md-4">
@@ -298,7 +298,9 @@
           
           <h1 class="text-center"><svg class="bi bi-chat-dots-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-          </svg>modifica testo</h1>
+          </svg>modifica testo</h1><button class="btn btn-primary" onclick="ApriFile()"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-font-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM5.057 4h5.886L11 6h-.5c-.18-1.096-.356-1.192-1.694-1.235l-.298-.01v6.09c0 .47.1.582.903.655v.5H6.59v-.5c.799-.073.898-.184.898-.654V4.755l-.293.01C5.856 4.808 5.68 4.905 5.5 6H5l.057-2z"/>
+          </svg>carica file</button>
           <textarea id="scriviTesto" rows="7" placeholder="scrivi qui il testo" class="form-control"></textarea><br>
           <button id="btnIinvia" class="new-btn btn btn-outline-success btn-lg btn-block" style="margin-bottom: 40px;" onclick="ChiudiTesto()">invio <svg class="bi bi-caret-right-square-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4v8z"/>
@@ -355,11 +357,51 @@
               </div>
           </div>
       </div>     
+
+      <div id="leggiFile">
+        <h1>carica un file in modo che text reader possa leggerti il contenuto</h1>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="file">
+          <label class="custom-file-label" for="customFile">clicca qui per selezionare il file da aprire</label>
+        </div>
+        <p>qui sotto comparirà il testo</p>
+        <textarea id="contenutoFile" rows="7" placeholder="qui comparirà il testo del file" class="form-control"></textarea><br>
+        <button id="btnIinviaFile" class="new-btn btn btn-outline-success btn-lg btn-block" style="margin-bottom: 40px;" onclick="ChiudiTestoFile()">invio <svg class="bi bi-caret-right-square-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4v8z"/>
+        </svg></button>
+
+        <br><hr>
+        <p class="titolo" id="regole-generali">guida per scrivere un testo più ordinato <strong>*importante*</strong></p>
+          <p class="sottotitolo">se segui queste regole il sito funzionarà perfettamente</p>
+          <ul>
+              <li>
+                  <p class="sottotitolo">come andare a capo?</p>
+                  <p>
+                      per andare a capo bisogna mettere un '.'(punto), e il programma andrà a capo da solo, è sconsigliato mettere i "..."(tre punti), in quanto il programma li leggerà male, è <strong>importante mettere il punto per andare a capo, perchè se si preme "invio" nella pagina della visualizzazione del testo non si andrà a capo</strong>
+                  </p>
+              </li>
+              <li>
+                  <p class="sottotitolo">come mettere una linea per ordinare il testo</p>
+                  <p>per creare una linea orizzontale che divide il testo per ordinarlo bisognerà inserire i caratteri "--" (2 trattini di fila), il programma andrà in automatico a capo e inserirà una linea orizzontale che ordinerà il tutto</p>
+              </li>
+              <li>
+                  <p class="sottotitolo">cosa succede se metto il ! o il ?</p>
+                  <p>se vengono inseriti i caratteri '!' e/o '?' il programma li leggerà come lettere normali e perciò non andrà a capo, per farlo andare a capo è necessario inserire un '.'(punto) dopo il '?' o dopo il '!'</p>
+              </li>
+              <li>
+                  <p class="sottotitolo">per una migliore "modalità lettura veloce"</p>
+                  <p>inserire lo spazio anche dopo il ".", perchè le parole vengono separate ogni volta che c'è il carattere " "(spazio)</p>
+              </li>
+          </ul>
+          <p>questo sito supporta tutti i tag html che si possono contenere in un tag "p"</p>
+
+      </div>
       
       <div id="cronologia">
           <p class="titolo">Cronologia</p>
           <p id="raccolta"></p>
       </div>
+
 
 
       <div id="setting" class="col-sm-12 col-md-6 overflow-auto blueShadow p-3 round-setting">
@@ -454,6 +496,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="js/fileReader.js"></script>
     <script src="js/Text.js"></script>
     <script src="js/script.js"></script>
     <script src="js/scroll_to.js"></script>

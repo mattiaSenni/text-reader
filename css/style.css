@@ -457,3 +457,7 @@ body{
   margin-left: auto;
   margin-right: auto;
 }
+
+#contenutoFile{
+  border: 2px solid black;
+}
