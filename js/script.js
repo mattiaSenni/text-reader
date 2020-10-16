@@ -235,7 +235,7 @@ isPlaying= false;
 var velocita = 500;
 function PlayLetturaVeloce(){
     isPlaying = true;
-    var arr = testo.split(' ');
+    var arr = text.testo.split(' ');
     for(var j = 0; j < arr.length; j++){
         console.log(arr[j]);
     }
