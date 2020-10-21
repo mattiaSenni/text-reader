@@ -1,8 +1,10 @@
+﻿@charset "utf-8";
 @charset "utf-8";
 
 body{
   font-family: 'Raleway', sans-serif;
   transition: all 0.5s ease;
+  background-image: url("../img/cityBlueBackground.jpg");
   }
 
   .navbar-nav .dropdown-menu a:hover{
@@ -14,7 +16,6 @@ body{
   }
   .simbolo{
     height: 2000px;
-    background-color: #232323;
     text-align: center;
     background-image: url("../img/text-reader-icon.png");
     background-size: 40%;
@@ -401,9 +402,9 @@ body{
   color: white;
 }
 
-#introduzione{
-  background-image: linear-gradient(top right, #FFFFFF 0%, #AACFEF 100%);
-}
+/*#introduzione{
+  background-image: url("../img/cityBlueBackground.jpg");
+}*/
 
 .navbar:hover{
   background-color: #2222CC;
@@ -415,12 +416,13 @@ body{
 
 
 /**/
-.introduzione-sfondo{
-  content: "";
+.introduzione-sfondo {
+    content: "";
     position: absolute;
     top: 0px;
     left: 0px;
-    background-color: #0097cc;
+    /*background-color: #0097cc;*/
+    background-image: url("../img/cityBlueBackground.jpg");
     height: 500px;
     width: 100%;
     /* border-bottom-left-radius: 1500px; */

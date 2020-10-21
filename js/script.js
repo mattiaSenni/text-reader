@@ -30,7 +30,7 @@ document.getElementById("nav-grande").addEventListener("mouseout", function(){
 
 window.addEventListener("load", function(){
     
-    MakeHome('#343434', 'white');
+    document.body.style.backgroundImage = "background-image: url('../img/cityBlueBackground.jpg');"
     document.getElementById("home").style.display="none";
     document.getElementById("home").style,display="none";
     document.getElementById("setting").style.display="none";
@@ -41,6 +41,7 @@ window.addEventListener("load", function(){
     document.getElementById("introduzione").style.display="none";
     document.getElementById("leggiFile").style.display="none";
     setTimeout(() => {
+		MakeHome('#343434', 'white');
         try{
             $("#simbolo").hide(1500);
             $("#introduzione").show(1500);
@@ -195,7 +196,7 @@ function MakeHome(back, write){
     document.getElementById("nav-small").style.color=write + "!important";
     document.getElementById("chooseBack").value= back;
     document.getElementById("chooseFont").value = write;
-    document.getElementById("botton-intro").style.borderColor=back;
+    //document.getElementById("botton-intro").style.borderColor=back;
     document.getElementsByClassName("nav-link").color = write;
 }
 
