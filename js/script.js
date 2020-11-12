@@ -39,7 +39,6 @@ window.addEventListener("load", function(){
     document.getElementById("letturaVeloce").style.display="none";
     document.getElementById("cronologia").style.display="none";
     document.getElementById("introduzione").style.display="none";
-    document.getElementById("leggiFile").style.display="none";
     setTimeout(() => {
 		MakeHome('#343434', 'white');
         try{
@@ -87,7 +86,7 @@ function ApriTesto(){
     $("#letturaVeloce").hide(1500);
     $("#home").hide(1500);
     $("#introduzione").hide(1500);
-    $("#leggiFile").hide(1500);
+    
     $("#scrivi").show(1500);
     
     momento = 4;
@@ -122,7 +121,7 @@ function ChiudiTesto(){
 
 function ChiudiTestoFile(){
     document.getElementById("testo").innerHTML= text.GetString(document.getElementById("contenutoFile").value)
-    document.getElementById("leggiFile").style.display="none";
+    
     document.getElementById("home").style.display="block";
     document.getElementById("introduzione").style.display="none";
     document.getElementById("riproduci").style.display="inline";
@@ -244,7 +243,7 @@ function ApriLettraVeloce(apri){
         $("#introduzione").hide(1500);
         $("#letturaVeloce").show(1500);
         $("#scrivi").hide(1500);
-        $("#leggiFile").hide(1500);
+        
         momento = 2;
     }
     else{
@@ -252,7 +251,7 @@ function ApriLettraVeloce(apri){
         $("#letturaVeloce").hide(1500);
         $("#scrivi").hide(1500);
         $("#introduzione").hide(1500);
-        $("#leggiFile").hide(1500);
+        
         momento = 1;
         /*
         document.getElementById("home").style.display="block";
@@ -324,7 +323,7 @@ function ShowCronologia(){
     $("#scrivi").hide(1500);
     $("#letturaVeloce").hide(1500);
     $("#cronologia").show(1500);    
-    $("#leggiFile").hide(1500);
+    
     if(document.getElementById("raccolta").innerHTML==""){
         alert("non c'è nessun elemento nella cronologia");
     }
@@ -398,19 +397,11 @@ function ApriIntroduzione(){
     $("#letturaVeloce").hide(1500);
     $("#cronologia").hide(1500); 
     $("#introduzione").show(1500);
-    $("#leggiFile").hide(1500);
+    
     momento = 3;
 }
 
-function ApriFile(){
-    $("#home").hide(1500);    
-    $("#scrivi").hide(1500);
-    $("#letturaVeloce").hide(1500);
-    $("#cronologia").hide(1500); 
-    $("#introduzione").hide(1500);
-    $("#leggiFile").show(1500);
-    momento = 4;
-}
+
 
 //SHOTCUT DA TASTIERA
 
