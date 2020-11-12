@@ -8,6 +8,7 @@ var Text = {
     isReading: false,
     cronologiaCompleta : new Array(),
     getId : 0,
+    language : "",
 
     Inizializza(){
         try {    
@@ -15,11 +16,12 @@ var Text = {
             this.testoPrec = "";
             SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;    
             recognition = new SpeechRecognition();
-            velocitaLettura = 1;
-            speech = new SpeechSynthesisUtterance();
+            this.velocitaLettura = 1;
+            speech = new SpeechSynthesisUtterance();            
             isReading = false;
             cronologiaCompleta = new Array();
             getId = 0;
+            this.language = "it-IT";
         }  
         catch(e) {    
             console.error(e);   
@@ -33,9 +35,9 @@ var Text = {
         speech.volume = 1;    
         speech.rate = 1;    
         speech.pitch = 1;   
-        speech.rate=velocitaLettura;
+        speech.rate= this.velocitaLettura;
         speech.voiceURI = "native";
-        speech.lang = "it-IT";
+        speech.lang = this.language;
     
         window.speechSynthesis.cancel();
         window.speechSynthesis.speak(speech);
@@ -60,7 +62,7 @@ var Text = {
             document.getElementById("riproduci").innerHTML="ferma la lettura";
             //document.getElementById("tRiproduci").innerHTML="ferma la lettura"; //mini-
             document.getElementById("playIcon").innerHTML="<path d='M5 3.5h6A1.5 1.5 0 0 1 12.5 5v6a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 11V5A1.5 1.5 0 0 1 5 3.5z'/>";
-            isReading = true;
+            this.isReading = true;
         }
         else{
             window.speechSynthesis.cancel();

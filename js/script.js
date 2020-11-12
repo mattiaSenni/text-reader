@@ -70,6 +70,10 @@ function ChangeVelocitaLettura(n){
     text.velocitaLettura = n;
 }
 
+function ChangeLinguaLettura(v){
+    text.language = v;
+}
+
 
 
 
@@ -400,6 +404,8 @@ function ApriIntroduzione(){
     
     momento = 3;
 }
+
+
 
 
 
