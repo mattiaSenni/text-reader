@@ -35,6 +35,7 @@ body{
       position: fixed;
       bottom: 70px;
       right: 15px;
+      border: solid 1px white
   }
 
   #backToTop:hover{
@@ -371,9 +372,9 @@ body{
   color: #0850FF;
 }
 
-.new-primary{
+.new-background-primary{
   background-color: #0850FF;
-  color: black;
+  color: white;
 }
 
 

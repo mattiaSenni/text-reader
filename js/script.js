@@ -35,7 +35,6 @@ window.addEventListener("load", function(){
     document.getElementById("home").style,display="none";
     document.getElementById("setting").style.display="none";
     document.getElementById("scrivi").style.display="none";
-    document.getElementById("scrivi").style.display="none";
     document.getElementById("letturaVeloce").style.display="none";
     document.getElementById("cronologia").style.display="none";
     document.getElementById("introduzione").style.display="none";
@@ -214,6 +213,7 @@ function ChangeSize(v){
     document.getElementById("letturaVeloce").style.fontSize=v+"px";
     document.getElementById("raccolta").style.fontSize=v+"px";
     document.getElementById("lblCarattere").innerHTML= v + " px";
+    document.getElementById("scriviTesto").style.fontSize = v + "px";
 }
 
 function InvioSetting(){
@@ -322,16 +322,20 @@ function CambiaVelocita(){
 
 
 function ShowCronologia(){
-    $("#home").hide(1500);
-    $("#introduzione").hide(1500);
-    $("#scrivi").hide(1500);
-    $("#letturaVeloce").hide(1500);
-    $("#cronologia").show(1500);    
+      
     
     if(document.getElementById("raccolta").innerHTML==""){
         alert("non c'è nessun elemento nella cronologia");
     }
-    momento = 3;
+    else{
+        $("#home").hide(1500);
+        $("#introduzione").hide(1500);
+        $("#scrivi").hide(1500);
+        $("#letturaVeloce").hide(1500);
+        $("#cronologia").show(1500);  
+        momento = 3;
+    }
+   
 }
 
 function ChangeFont(v){
@@ -405,7 +409,47 @@ function ApriIntroduzione(){
     momento = 3;
 }
 
+//formatta text editor
+function ChangeSizeEditor(n){
+    document.getElementById("scriviTesto").style.fontSize = n + "px";
+}
 
+function OrientamentoEditor(val){
+    document.getElementById("scriviTesto").style.textAlign = val;
+}
+
+function ChangeFontEditor(val){
+    document.getElementById("scriviTesto").style.fontFamily= val;
+}
+
+function InvioSettingEditor(){
+    document.getElementById("scriviTesto").style.backgroundColor = document.getElementById("chooseBackEditor").value;
+    document.getElementById("scriviTesto").style.color = document.getElementById("chooseFontEditor").value;
+}
+
+var formattazioneDefault = true;
+function BucketIcon(){
+    return '<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bucket-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">'+
+    '<path fill-rule="evenodd" d="M2.522 5H2a.5.5 0 0 0-.494.574l1.372 9.149A1.5 1.5 0 0 0 4.36 16h7.278a1.5 1.5 0 0 0 1.483-1.277l1.373-9.149A.5.5 0 0 0 14 5h-.522A5.5 5.5 0 0 0 2.522 5zm1.005 0h8.945a4.5 4.5 0 0 0-8.945 0z"/>'+
+    '</svg>'
+}
+function FormattazionePredefinitaEditor(){
+    if(formattazioneDefault)
+    {
+        document.getElementById("scriviTesto").style.backgroundColor = "#021032";
+        document.getElementById("scriviTesto").style.color = "#ffffff";
+        document.getElementById("scriviTesto").style.fontSize = document.body.style.fontSize;
+        document.getElementById("formattazioneAutoEditor").innerHTML = BucketIcon() + "formattazione predefinita";
+    }
+    else
+    {
+        document.getElementById("scriviTesto").style.backgroundColor = "#ffffff";
+        document.getElementById("scriviTesto").style.color = "#000000";
+        document.getElementById("scriviTesto").style.fontSize = document.body.style.fontSize;
+        document.getElementById("formattazioneAutoEditor").innerHTML = BucketIcon() + "formattazione text-reader";
+    }
+    formattazioneDefault = !formattazioneDefault;
+}
 
 
 
