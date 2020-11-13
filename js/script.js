@@ -40,7 +40,7 @@ window.addEventListener("load", function(){
     document.getElementById("cronologia").style.display="none";
     document.getElementById("introduzione").style.display="none";
     setTimeout(() => {
-		MakeHome('#343434', 'white');
+		MakeHome('#021032', '#ffffff');
         try{
             $("#simbolo").hide(1500);
             $("#introduzione").show(1500);
@@ -197,7 +197,7 @@ function MakeHome(back, write){
     document.getElementById("icon").style.color=write + "!important";
     document.getElementById("nav-grande").style.color=write + "!important";
     document.getElementById("nav-small").style.color=write + "!important";
-    document.getElementById("chooseBack").value= back;
+    document.getElementById("chooseBack").value= "#123456";
     document.getElementById("chooseFont").value = write;
     //document.getElementById("botton-intro").style.borderColor=back;
     document.getElementsByClassName("nav-link").color = write;
@@ -225,8 +225,8 @@ var menuOpen = false;
 function ShowMenu(){
     if(menuOpen == false){        
         $("#setting").show(1500);
-        document.getElementById("chooseBack").value=document.body.style.background;
-        document.getElementById("chooseFont").value=document.body.style.color;
+        //document.getElementById("chooseBack").value=document.body.style.background;
+        //document.getElementById("chooseFont").value=document.body.style.color;
         menuOpen = true;
     }
     else{

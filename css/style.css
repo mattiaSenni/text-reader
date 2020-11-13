@@ -28,16 +28,7 @@ body{
     width: 100%;
   }
 
-  .triangle-up {
-      width: 0;
-      height: 0;
-      border-left: 18px solid transparent;
-      border-right: 18px solid transparent;
-      border-bottom: 32px solid darkblue;
-  }
-  .triangle-up:hover{
-    border-bottom: 35px solid #047bff;
-  }
+  
 
   #backToTop{
       display: none;
@@ -56,7 +47,7 @@ body{
     position: fixed;
     top: 0px;
     right: 0px;
-    background-color: #33aeff;
+    background-color: #0850FF;
     color: white;
     display: none;
     padding: 10px;
@@ -65,7 +56,7 @@ body{
 
   
 .blueShadow{
-  box-shadow: 0 .5rem 1rem #33aeff!important;
+  box-shadow: 0 .5rem 1rem #084eff44!important;
 }
 
   .bottone{
@@ -358,7 +349,7 @@ body{
   margin: 10px;
   border-radius: 88% 12% 91% 9% / 45% 43% 57% 55%  ;
   transition: all 0.8s ease;
-  background-color: #0097cc;
+  background-color: #0850FF;
 }
 
 .small-navbar{
@@ -377,12 +368,12 @@ body{
 
 
 .new-text-primary{
-  color: #0097cc;
+  color: #0850FF;
 }
 
 .new-primary{
-  background-color: #0097cc;
-  color: white;
+  background-color: #0850FF;
+  color: black;
 }
 
 
@@ -392,13 +383,13 @@ body{
 }
 
 .btn-new-primary{
-  background-color: #0097cc;
+  background-color: #0850FF;
   color: white;
   border-radius: 80% 20% 54% 46% / 75% 35% 65% 25%;
 }
 
 .btn-new-primary:hover{
-  background-color: #002358;
+  background-color: #063CBF;
   color: white;
 }
 
@@ -407,10 +398,10 @@ body{
 }*/
 
 .navbar:hover{
-  background-color: #2222CC;
+  background-color: #0748E5;
   /* border-bottom: 2px solid white; */
-  box-shadow: 0px 10px 0px 0px #2222AA77;
-  transform: TRANSLATE(0PX, -10PX);
+  box-shadow: 0 1rem 3rem #084eff50;
+  /*transform: TRANSLATE(0PX, -10PX);*/
 }
 
 
@@ -442,7 +433,7 @@ body{
 }
 
 #backToTop{
-  background-color: #0097cc;
+  background-color: #0850FF;
   border-radius: 49% 51% 46% 54% / 36% 24% 76% 64% ;
   transition: all 0.2s ease-in;
 }
